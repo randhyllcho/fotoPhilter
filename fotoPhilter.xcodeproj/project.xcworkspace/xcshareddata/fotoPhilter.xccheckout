@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3F1F476C-3E94-4194-AE6D-4635A5B3B8B9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>fotoPhilter</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>376E040639C55469E25B8B642155982C569C5184</key>
+		<string>https://github.com/randhyllcho/class-person-thing.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>fotoPhilter/fotoPhilter.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>376E040639C55469E25B8B642155982C569C5184</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/randhyllcho/class-person-thing.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>376E040639C55469E25B8B642155982C569C5184</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>376E040639C55469E25B8B642155982C569C5184</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
