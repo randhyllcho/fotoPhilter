@@ -16,6 +16,7 @@ class GalleryCell: UICollectionViewCell {
     self.addSubview(self.imageView)
     self.backgroundColor = UIColor.blackColor()
     imageView.frame = self.bounds
+    imageView.contentMode = UIViewContentMode.ScaleAspectFill
     self.imageView.layer.masksToBounds = true
     self.imageView.layer.cornerRadius = 16
     self.imageView.layer.borderWidth = 3

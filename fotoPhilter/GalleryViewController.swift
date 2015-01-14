@@ -8,10 +8,15 @@
 
 import UIKit
 
-class GalleryViewController: UIViewController, UICollectionViewDataSource {
+protocol  ImageSelectedProtocol {
+  func controllerDidSelectImage(UIImage) -> Void
+}
+
+class GalleryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
   
   var collectionView : UICollectionView!
   var images = [UIImage]()
+  var delegate : ImageSelectedProtocol?
 
   
   override func loadView() {
@@ -20,6 +25,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
     self.collectionView = UICollectionView(frame: rootView.bounds, collectionViewLayout: collectionViewFlowLayout)
     rootView.addSubview(self.collectionView)
     self.collectionView.dataSource = self
+    self.collectionView.delegate = self
     collectionViewFlowLayout.itemSize = CGSize(width: 200, height: 200)
     
     collectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -71,6 +77,12 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
   rootView.addConstraints(collectionViewHorizontal)
     
 //  let collectionView = views["collectionView"] as UIView!
+  }
+  
+  func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    self.delegate?.controllerDidSelectImage(self.images[indexPath.row])
+    
+    self.navigationController?.popViewControllerAnimated(true)
   }
 
     /*
