@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		323C3BF31A64A3C3000AE10D /* iconCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 323C3BF21A64A3C3000AE10D /* iconCamera.png */; };
 		32C491731A65DE34003E2339 /* ThumbNail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C491721A65DE34003E2339 /* ThumbNail.swift */; };
+		32C491751A6716EF003E2339 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C491741A6716EF003E2339 /* PhotosViewController.swift */; };
 		32CFB11E1A646DF2003089B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CFB11D1A646DF2003089B8 /* AppDelegate.swift */; };
 		32CFB1201A646DF2003089B8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CFB11F1A646DF2003089B8 /* ViewController.swift */; };
 		32CFB1251A646DF2003089B8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32CFB1241A646DF2003089B8 /* Images.xcassets */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		323C3BF21A64A3C3000AE10D /* iconCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconCamera.png; sourceTree = "<group>"; };
 		32C491721A65DE34003E2339 /* ThumbNail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbNail.swift; sourceTree = "<group>"; };
+		32C491741A6716EF003E2339 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		32CFB1181A646DF2003089B8 /* fotoPhilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fotoPhilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32CFB11C1A646DF2003089B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32CFB11D1A646DF2003089B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				32CFB11D1A646DF2003089B8 /* AppDelegate.swift */,
 				32CFB11F1A646DF2003089B8 /* ViewController.swift */,
+				32C491741A6716EF003E2339 /* PhotosViewController.swift */,
 				32C491721A65DE34003E2339 /* ThumbNail.swift */,
 				32CFB13D1A647E27003089B8 /* GalleryViewController.swift */,
 				32CFB1411A648073003089B8 /* GalleryCell.swift */,
@@ -256,6 +259,7 @@
 				32CFB1421A648073003089B8 /* GalleryCell.swift in Sources */,
 				32C491731A65DE34003E2339 /* ThumbNail.swift in Sources */,
 				32CFB13E1A647E27003089B8 /* GalleryViewController.swift in Sources */,
+				32C491751A6716EF003E2339 /* PhotosViewController.swift in Sources */,
 				32CFB1201A646DF2003089B8 /* ViewController.swift in Sources */,
 				32CFB11E1A646DF2003089B8 /* AppDelegate.swift in Sources */,
 			);
