@@ -37,7 +37,7 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     let photoButton = UIButton()
     photoButton.setTranslatesAutoresizingMaskIntoConstraints(false)
     rootView.addSubview(photoButton)
-    photoButton.setTitle("Photos", forState: .Normal)
+    photoButton.setTitle(NSLocalizedString("Photo", comment: "Button for photo control"), forState: .Normal)
     photoButton.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
     photoButton.addTarget(self, action: "photoButtonPressed:", forControlEvents: UIControlEvents.TouchUpInside)
     
@@ -68,18 +68,18 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     self.cherButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareButtonPressed")
     self.navigationItem.rightBarButtonItem = self.cherButton
     
-    let galleryOption = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default) { (action) -> Void in
+    let galleryOption = UIAlertAction(title: NSLocalizedString("Gallery", comment: "Access the gallery"), style: UIAlertActionStyle.Default) { (action) -> Void in
       let galleryVC = GalleryViewController()
       galleryVC.delegate = self
       self.navigationController?.pushViewController(galleryVC, animated: true)
     }
-    let cancelOption = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+    let cancelOption = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel Option"), style: UIAlertActionStyle.Cancel) { (action) -> Void in
       
     }
     self.alert.addAction(galleryOption)
     self.alert.addAction(cancelOption)
     
-    let filterOption = UIAlertAction(title: "Filter", style: UIAlertActionStyle.Default) { (action) -> Void in
+    let filterOption = UIAlertAction(title: NSLocalizedString("Filter", comment: "Access filters"), style: UIAlertActionStyle.Default) { (action) -> Void in
       self.collectionViewYConstraint.constant = 20
       self.mainImageBottomConstraint.constant = self.mainImageView.frame.height * 0.2
       UIView.animateWithDuration(0.4, animations: { () -> Void in
@@ -92,7 +92,7 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     self.alert.addAction(filterOption)
     
     if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-      let cameraOption = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
+      let cameraOption = UIAlertAction(title: NSLocalizedString("Camera", comment: "Opens the camera"), style: UIAlertActionStyle.Default, handler: { (action) -> Void in
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = UIImagePickerControllerSourceType.Camera
         imagePickerController.allowsEditing = true
@@ -102,7 +102,7 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
       self.alert.addAction(cameraOption)
     }
     
-    let photoOption = UIAlertAction(title: "Photos", style: UIAlertActionStyle.Default) { (action) -> Void in
+    let photoOption = UIAlertAction(title: NSLocalizedString("Photos", comment: "Access user photo collection"), style: UIAlertActionStyle.Default) { (action) -> Void in
       let photosVC = PhotosViewController()
       photosVC.destinationImageSize = self.mainImageView.frame.size
       photosVC.delegate = self

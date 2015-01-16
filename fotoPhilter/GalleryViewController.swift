@@ -17,12 +17,13 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
   var collectionView : UICollectionView!
   var images = [UIImage]()
   var delegate : ImageSelectedProtocol?
+  var collectionViewFlowLayout : UICollectionViewFlowLayout!
 
   
   override func loadView() {
     let rootView = UIView(frame: UIScreen.mainScreen().bounds)
-    let collectionViewFlowLayout = UICollectionViewFlowLayout()
-    self.collectionView = UICollectionView(frame: rootView.bounds, collectionViewLayout: collectionViewFlowLayout)
+    self.collectionViewFlowLayout = UICollectionViewFlowLayout()
+    self.collectionView = UICollectionView(frame: rootView.frame, collectionViewLayout: collectionViewFlowLayout)
     rootView.addSubview(self.collectionView)
     self.collectionView.dataSource = self
     self.collectionView.delegate = self
@@ -53,8 +54,39 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
       self.images.append(image5!)
       self.images.append(image6!)
       
+      let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: "collectionViewPinched:")
+      self.collectionView.addGestureRecognizer(pinchRecognizer)
+      
         // Do any additional setup after loading the view.
     }
+  
+  //MARK: Gesture Recognizer Action
+  
+  func collectionViewPinched(sender: UIPinchGestureRecognizer) {
+    
+    switch sender.state {
+    case .Began:
+      println("Began")
+    case .Changed:
+      println("Changed")
+      self.collectionView.performBatchUpdates({ () -> Void in
+        if sender.velocity > 0 {
+          let newSize = CGSize(width: self.collectionViewFlowLayout.itemSize.width * 1.05, height: self.collectionViewFlowLayout.itemSize.height * 1.05)
+          self.collectionViewFlowLayout.itemSize = newSize
+        } else if sender.velocity < 0 {
+          let newSize = CGSize(width: self.collectionViewFlowLayout.itemSize.width / 1.05, height: self.collectionViewFlowLayout.itemSize.height / 1.05)
+          self.collectionViewFlowLayout.itemSize = newSize
+        }
+      }, completion: { (finished) -> Void in
+        
+      })
+    case .Ended:
+      println("Ended")
+    default:
+      println("Default")
+    }
+    
+  }
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return self.images.count

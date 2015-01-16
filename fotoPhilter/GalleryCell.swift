@@ -20,6 +20,13 @@ class GalleryCell: UICollectionViewCell {
     self.imageView.layer.masksToBounds = true
     self.imageView.layer.cornerRadius = 16
     self.imageView.layer.borderWidth = 3
+    self.imageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    let views = ["imageView" : imageView]
+    let imageViewConstraintHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|[imageView]|", options: nil, metrics: nil, views: views)
+    self.addConstraints(imageViewConstraintHorizontal)
+    
+    let imageViewConstraintVertical = NSLayoutConstraint.constraintsWithVisualFormat("V:|[imageView]|", options: nil, metrics: nil, views: views)
+    self.addConstraints(imageViewConstraintVertical)
   }
 
   required init(coder aDecoder: NSCoder) {
