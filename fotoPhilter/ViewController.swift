@@ -64,7 +64,9 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.doneButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "doneButtonPressed")
+    self.title = (title: NSLocalizedString("Millions in the Ceiling", comment: "Title label"))
+    
+    self.doneButton = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done Button"), style: .Done, target: self, action: "doneButtonPressed")
     self.cherButton = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "shareButtonPressed")
     self.navigationItem.rightBarButtonItem = self.cherButton
     
