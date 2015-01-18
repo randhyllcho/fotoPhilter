@@ -1,0 +1,1 @@
+A photo filtering app that allows the user to add filters to photos using the camera, a generic photo gallery or the users camera roll. 
