@@ -107,8 +107,6 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource, UICol
   
   let collectionViewHorizontal = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[collectionView]-0-|", options: nil, metrics: nil, views: views)
   rootView.addConstraints(collectionViewHorizontal)
-    
-//  let collectionView = views["collectionView"] as UIView!
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {

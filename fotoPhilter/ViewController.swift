@@ -30,7 +30,7 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     
     mainImageView.contentMode = UIViewContentMode.ScaleAspectFit
     self.mainImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
-    self.mainImageView.backgroundColor = UIColor.lightGrayColor()
+    self.mainImageView.backgroundColor = UIColor.whiteColor()
     rootView.addSubview(self.mainImageView)
     rootView.backgroundColor = UIColor.lightGrayColor()
    
@@ -47,7 +47,6 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     collectionViewFlowLayout.itemSize = CGSize(width: 100, height: 100)
     collectionViewFlowLayout.scrollDirection = .Horizontal
     rootView.addSubview(collectionView)
-    //collectionView.backgroundColor = UIColor.blueColor()
     
     collectionView.setTranslatesAutoresizingMaskIntoConstraints(false)
     collectionView.dataSource = self
@@ -147,6 +146,8 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
   
   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
     let image = info[UIImagePickerControllerEditedImage] as? UIImage
+    
+    
     self.controllerDidSelectImage(image!)
     picker.dismissViewControllerAnimated(true, completion: nil)
   }
@@ -202,6 +203,8 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let selectedFilter = self.thumbNails[indexPath.row].filterName
+    let orientation = self.mainImageView.image?.imageOrientation
+    
     let startImage = CIImage(image: self.mainImageView.image)
     let filter = CIFilter(name: selectedFilter)
     filter.setDefaults()
@@ -209,7 +212,7 @@ class ViewController: UIViewController, ImageSelectedProtocol, UICollectionViewD
     let result = filter.valueForKey(kCIOutputImageKey) as CIImage
     let extent = result.extent()
     let imageRef = self.gpuContext.createCGImage(result, fromRect: extent)
-    self.mainImageView.image = UIImage(CGImage: imageRef)
+    self.mainImageView.image = UIImage(CGImage: imageRef, scale: 1.0, orientation: orientation!)
   }
 //MARK: AutoLayout constraints
   

@@ -15,6 +15,7 @@ class PhotosViewController: UIViewController, UICollectionViewDataSource, UIColl
   var assetCollection : PHAssetCollection!
   var imageCacheManager = PHCachingImageManager()
   
+  
   var collectionView : UICollectionView!
   
   var destinationImageSize : CGSize!

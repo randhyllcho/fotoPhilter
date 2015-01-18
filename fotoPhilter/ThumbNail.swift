@@ -21,7 +21,7 @@ class ThumbNail {
     self.filterName = filterName
     self.imageQueue = operationQueue
     self.gpuContext = context
-  }
+     }
   func generateFilteredImage() {
     let startImage = CIImage(image: self.originalImage)
     let filter = CIFilter(name: self.filterName)
